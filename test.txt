@@ -1,0 +1,27 @@
+{
+  "CO": {
+    "concentration": 273.71,
+    "aqi": 3
+  },
+  "NO2": {
+    "concentration": 16.28,
+    "aqi": 20
+  },
+  "O3": {
+    "concentration": 28.97,
+    "aqi": 24
+  },
+  "SO2": {
+    "concentration": 2.09,
+    "aqi": 3
+  },
+  "PM2.5": {
+    "concentration": 3.87,
+    "aqi": 12
+  },
+  "PM10": {
+    "concentration": 6.94,
+    "aqi": 6
+  },
+  "overall_aqi": 24
+}

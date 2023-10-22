@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weatherify - Get Latest Weather Updates</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+          <div class="logo">
+            <img src="IMG/weather-icon-1.svg" alt="email svg"><span>Weatherify</span>
+          </div>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">Home</a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">About Us</a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">Contact Us</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+          <input type="search" class="form-control" placeholder="Search The City..." aria-label="Search The City" id="city">
+          
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <!-- ----------------------------------------- -->
+  
+
+  <!-- Main -->
+
+  <main>
+    <div class="conatiner">
+      <br>
+      <h2 class="display-6 text-center mb-4">Weather Info For <span id="cityname" style="text-transform: capitalize;"></span></h2>
+      <div class="weather-img text-center mb-4" id="weatherimg"></div>
+      <h3 class="display-6 text-center mb-4"><span id="weathermain" style="text-transform: capitalize;"></span></h3>
+        <div class="maincard row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temprature</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id="temp"></span>&deg;C</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Feels Like: <span id="feels"></span>&deg;C</li>
+                  <li>Max Temprature: <span id="max"></span>&deg;C</li>
+                  <li>Min Temprature: <span id="min"></span>&deg;C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Wind</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id="wind"></span>Km/h</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind Degree: <span id="windegree"></span>&deg;</li>
+                  <li>Wind Gust: <span id="windgust"></span>m/s</li>
+                  <li>AQI: <span id="aqi"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Other</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Humidtiy: <span id="humidity"></span>%</li>
+                  <li>UV Index: <span id="uv"></span></li>
+                  <li>Visibility: <span id="visibility"></span>m</li>
+                  <li>Sunrise: <span id="sunrise"></span></li>
+                  <li>Sunset: <span id="sunset"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="display-6 text-center mb-4">Air Quality</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 0%;"></th>
+                <th style="width: 22%;">Concentration</th>
+                <th style="width: 22%;">AQI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">CO</th>
+                <td><span id="co_conc"></span></td>
+                <td><span id="co_aqi"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">NO<sub>2</sub></th>
+                <td><span id="no_conc"></span></td>
+                <td><span id="no_aqi"></span></td>
+              </tr>
+            </tbody>
+    
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">O<sub>3</sub></th>
+                <td><span id="o3_conc"></span></td>
+                <td><span id="o3_aqi"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">SO<sub>2</sub></th>
+                <td><span id="so2_conc"></span></td>
+                <td><span id="so2_aqi"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">PM<sub>2.5</sub></th>
+                <td><span id="pm2_conc"></span></td>
+                <td><span id="pm2_aqi"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">PM<sub>10</sub></th>
+                <td><span id="pm10_conc"></span></td>
+                <td><span id="pm10_aqi"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </main>
+
+
+  <!-- ----------------------------------------- -->
+
+
+    <!-- Footer -->
+    <footer>
+      Copyright weatherify.com | All Rights Reserved
+    </footer>
+  <!-- ----------------------------------------- -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
