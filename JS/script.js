@@ -1,5 +1,5 @@
-const rapid_api_api_key = "bb1c51a074msh2e5ba048322d78bp1eea33jsn6cbafd6838be"
-const openweather_api_key = "f1f03e738a595abb7a070434ce2ce426"
+const rapid_api_api_key = "" // your rapi api key goes here
+const openweather_api_key = "" // your open weather pai key goes here
 
 let icon_code = "10d"
 
