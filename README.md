@@ -11,7 +11,7 @@ Weatherify is a weather data website that provides real-time weather information
 ## APIs Used
 
 1. **Air Quality API by API Ninjas**
-   - [API Documentation](https://air-quality-by-api-ninjas.p.rapidapi.com)
+   - [API Documentation](https://api-ninjas.com/api/airquality)
 
 2. **OpenWeatherMap API**
-   - [API Documentation](https://api.openweathermap.org)
+   - [API Documentation](https://openweathermap.org/api/one-call-3)
